@@ -1,9 +1,7 @@
 from turtle import Turtle, Screen
+import random
 
-t1 = Turtle()
-t2 = Turtle()
-t3 = Turtle()
-t4 = Turtle()
+colors = ["red", "green", "blue", "orange", "pink", "brown"]
 
 screen = Screen()
 # Set up the dimensions of the screen
@@ -14,14 +12,16 @@ user_bet = screen.textinput("Make your bet", "Which turtle will win the race? En
 
 print(user_bet)
 
-t1.color('brown')
-t2.color('blue')
-t3.color('green')
-t4.color('black')
+y_index = -100
 
-t1.shape("turtle")
-t1.penup()
-t1.goto(-235, 0)
+for turtle_index in range(0,6):
+    tim = Turtle()
+    tim.shape('turtle')
+    tim.color(random.choice(colors))
+    tim.penup()
+    tim.goto(-230, y_index)
+    y_index += 40
+
 
 screen.listen()
 
